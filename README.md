@@ -48,3 +48,21 @@ related tables are not and are a good target for indexes.
 clause. As you’ve seen, search performance is significantly improved
 via indexes.
 - Use EXPLAIN ANALYZE to test performance under a variety of configurations if you’re unsure. Optimization is a process!
+
+### Transactions
+
+- START TRANSACTION signals the start of the transaction block. In PostgreSQL, you can also use the non-ANSI SQL BEGIN keyword.
+- COMMIT signals the end of the block and saves all changes.
+- ROLLBACK signals the end of the block and reverts all changes.
+
+```sql
+START TRANSACTION;
+UPDATE meat_poultry_egg_inspect
+SET company = 'AGRO Merchantss Oakland LLC'
+WHERE company = 'AGRO Merchants Oakland, LLC';
+SELECT company
+FROM meat_poultry_egg_inspect
+WHERE company LIKE 'AGRO%'
+ORDER BY company;
+ROLLBACK;
+```

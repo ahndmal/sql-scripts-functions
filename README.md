@@ -31,7 +31,9 @@ WITH (FORMAT CSV, HEADER);
 ### Aggregate
 
 https://www.postgresql.org/docs/current/functions-aggregate.html
-min, max, group, count
+min, max, group, count, sum
+
+code 00 (no change in address)
 
 ### Indexes
 

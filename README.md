@@ -66,3 +66,5 @@ WHERE company LIKE 'AGRO%'
 ORDER BY company;
 ROLLBACK;
 ```
+
+structured data
